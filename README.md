@@ -28,32 +28,4 @@ Email: bhartimandrai8@gmail.com
 ```bash
 git clone https://github.com/Bharti-zz/blog_project.git
 
-## TASK 2: PHP & MySQL Database Connection
 
-### Objective
-To establish a successful connection between PHP and MySQL using XAMPP.
-
-### Steps Performed
-- Started Apache and MySQL in XAMPP
-- Opened phpMyAdmin
-- Created database `blog_db`
-- Created `db_connect.php` file
-- Wrote PHP code to connect with MySQL
-- Tested connection in browser
-
-### Output
-When accessing:
-http://localhost/blog_project/db_connect.php
-
-The following message was displayed:
-
-Database connected successfully!
-
-### Tools Used
-- XAMPP
-- PHP
-- MySQL
-- Git & GitHub
-
-### Status
-✅ Task 2 Completed Successfully
