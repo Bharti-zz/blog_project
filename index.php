@@ -23,13 +23,18 @@ $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 <h2 class="text-center mb-4">My Blog Project</h2>
 
+<!-- Add Post Button -->
+
+<a href="add_post.php" class="btn btn-success mb-3">Add New Post</a>
+
 <!-- Search Form -->
 
 <form method="GET" class="mb-4">
 
 <div class="input-group">
 
-<input type="text" class="form-control" name="search" placeholder="Search by title or content" required value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+<input type="text" class="form-control" name="search" placeholder="Search by title or content"
+value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
 
 <button class="btn btn-primary">Search</button>
 
@@ -108,6 +113,16 @@ while($row = mysqli_fetch_assoc($result)){
 
 <p class="card-text"><?= htmlspecialchars($row['content']) ?></p>
 
+<!-- Edit Delete Buttons -->
+
+<a href="edit_post.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+
+<a href="delete_post.php?id=<?= $row['id'] ?>"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Are you sure you want to delete this post?')">
+Delete
+</a>
+
 </div>
 
 </div>
@@ -125,7 +140,6 @@ echo "<p>No posts found.</p>";
 ?>
 
 </div>
-
 
 <!-- Pagination -->
 
@@ -153,7 +167,6 @@ href="?page=<?= $i ?><?= ($search!='')?'&search='.$search:'' ?>">
 </nav>
 
 <?php endif; ?>
-
 
 </div>
 
